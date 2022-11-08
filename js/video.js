@@ -31,8 +31,8 @@ document.querySelector("#skip").addEventListener("click", function () {
 	console.log(video.currentTime);
 });
 document.querySelector("#mute").addEventListener("click", function () {
-	if (video.muted == false) { video.muted = true; }
-	else { video.muted = false; }
+	if (video.muted === false) { video.muted = true; document.getElementById("mute").innerHTML = "Unmute"; }
+	else { video.muted = false; document.getElementById("mute").innerHTML = "Mute"; }
 });
 document.querySelector("#slider").addEventListener("click", function () {
 	video.volume = slider.value / 100;
