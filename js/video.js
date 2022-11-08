@@ -10,30 +10,26 @@ window.addEventListener("load", function () {
 document.querySelector("#play").addEventListener("click", function () {
 	console.log("play video");
 	video.play();
-	video.volume = 1;
+	document.getElementById("volume").innerHTML = (video.volume * 100).toString() + '%';
 });
 document.querySelector("#slower").addEventListener("click", function () {
 	video.playbackRate = video.playbackRate * 0.9;
 	console.log(video.playbackRate);
 });
-
 document.querySelector("#pause").addEventListener("click", function () {
 	console.log("pause video");
 	video.pause();
 });
-
 document.querySelector("#faster").addEventListener("click", function () {
 	video.playbackRate = video.playbackRate / 0.9;
 	console.log(video.playbackRate);
 });
-
 document.querySelector("#skip").addEventListener("click", function () {
 	console.log("Skip Video");
 	if (video.currentTime + 10 >= video.duration) { video.currentTime = 0; }
 	else { video.currentTime = video.currentTime + 10; }
 	console.log(video.currentTime);
 });
-
 document.querySelector("#mute").addEventListener("click", function () {
 	if (video.muted == false) { video.muted = true; }
 	else { video.muted = false; }
